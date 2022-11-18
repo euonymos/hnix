@@ -32,7 +32,8 @@
         packageRoot = pkgs.runCommand "hnix-src" {} ''
           cp -r ${./.} $out
           chmod -R +w $out
-          cp -r ${nix}/ $out/data/nix
+          mkdir -p $out/data/nix
+          cp -r ${nix}/tests $out/data/nix
         '';
       });
 
