@@ -28,6 +28,7 @@
         inherit pkgs;
         withHoogle = true;
         compiler = "ghc8107";
+        doCheck = false;
         packageRoot = pkgs.runCommand "hnix-src" {} ''
           cp -r ${./.} $out
           chmod -R +w $out
